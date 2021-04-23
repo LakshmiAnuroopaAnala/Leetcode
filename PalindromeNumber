@@ -1,0 +1,19 @@
+class Solution:
+    def isPalindrome(self, x: int) -> bool:
+        k=str(x)
+        rev=''
+        if x==0:
+            return True
+        if k[0]=='-':
+            return False
+        else:
+            while x>0:
+                rem=x%10
+                rev=rev+str(rem)
+                x=x//10  
+            if rev==k:
+                return True
+            else:
+                return False
+    
+        
