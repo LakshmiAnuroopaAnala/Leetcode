@@ -1,0 +1,13 @@
+class Solution:
+    def lengthOfLastWord(self, s: str) -> int:
+        if s.isspace():
+            return 0
+        l=s.split(" ")
+        if len(l[-1])==0:
+            for i in range(len(l)-1,-1,-1):
+                if len(l[i])>0:
+                    return len(l[i])           
+                
+        else:
+            return len(l[-1])
+        
