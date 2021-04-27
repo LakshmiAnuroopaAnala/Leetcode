@@ -1,0 +1,20 @@
+class Solution:
+    def nextGreaterElement(self, nums1: List[int], nums2: List[int]) -> List[int]:
+        stack=[]
+        stack.append(nums2[-1])
+        target=[0]*(len(nums2)-1)
+        target.append(-1)
+        result=[]
+        for i in range(len(nums2)-2,-1,-1):
+            while len(stack)>0 and stack[-1]<=nums2[i]:
+                stack.pop()
+            if len(stack)>0 and stack[-1]>nums2[i]:
+                target[i]=stack[-1]
+            else:
+                target[i]=-1
+            stack.append(nums2[i])
+            #print(target)
+        for i in nums1:
+            ind=nums2.index(i)
+            result.append(target[ind])
+        return result    
