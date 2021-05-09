@@ -1,0 +1,20 @@
+class Solution {
+public:
+    int totalMoney(int n) {
+     int reqMoney=0,needToIncrease=0;
+        while (true)
+        {
+            for(int i=1;i<8;i++)
+            {
+              reqMoney=reqMoney+i+needToIncrease;
+              n--;
+            
+            if (n==0)
+            {
+                return reqMoney;
+            }
+            }
+            needToIncrease++;
+        }
+    }
+};
