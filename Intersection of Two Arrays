@@ -1,0 +1,20 @@
+class Solution:
+    def intersection(self, nums1: List[int], nums2: List[int]) -> List[int]:
+        
+        if nums1<nums2:
+            get=nums1
+            val=2
+        else:
+            get=nums2
+            val=1
+        result=[]
+        if val==1:
+            val1=nums1
+        else:
+            val1=nums2
+        for i in get:
+            if i in val1:
+                result.append(i)
+        res_set=set(result)
+        return list(res_set)
+        
