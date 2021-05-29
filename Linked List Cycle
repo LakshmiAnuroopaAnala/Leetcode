@@ -1,0 +1,11 @@
+if head==None:
+            return False
+        a=head
+        b=head
+        while b.next and b.next.next:
+            a=a.next
+            b=b.next.next
+            if a==b:
+                return True
+        else:
+            return False
