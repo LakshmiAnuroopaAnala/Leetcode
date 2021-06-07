@@ -1,0 +1,38 @@
+class Solution {
+public:
+    bool isSumEqual(string firstWord, string secondWord, string targetWord) 
+    {
+        if(firstWord.empty()||secondWord.empty()||targetWord.empty())
+        {
+            return false;
+        }
+        int f=sum(firstWord);
+        int s=sum(secondWord);
+        int t=sum(targetWord);
+        if(f+s==t)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+    int sum(string s)
+    {
+        int val,r=0;
+        for(int i=0;i<s.size();i++)
+        {
+           val=int(s[i])-97;
+            if (val==0)
+            {
+               r=r*10;
+            }         
+            else
+            {
+                r=r*10+val;
+            }
+        }
+        return r;
+    }
+};
