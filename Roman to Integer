@@ -1,0 +1,28 @@
+class Solution {
+public:
+    int romanToInt(string s) {
+       map<char,int> roman;
+	roman['I']=1;
+	roman['V']=5;
+	roman['X']=10;
+	roman['L']=50;
+    roman['C']=100;
+    roman['D']=500;
+    roman['M']=1000;
+
+    int c=roman[s[s.size()-1]];
+    for(int i=s.size()-2;i>=0;i--)
+    {
+    	if (roman[s[i]]<roman[s[i+1]])
+    	{
+    		c-=roman[s[i]];
+		}
+		else
+		{
+			c+=roman[s[i]];
+		}
+	}
+	
+	return c; 
+    }
+};
