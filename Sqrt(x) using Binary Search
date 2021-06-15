@@ -1,0 +1,27 @@
+class Solution {
+public:
+    int mySqrt(int num) {
+       long long int ans,low=1,high=num,mid,sqr;
+        while(low<=high)
+        {
+            mid=(low+high)/2;
+            sqr=mid*mid;
+            if(sqr==num)
+            {
+                return mid;
+            }
+            else if(sqr<num)
+            {
+                ans=mid;
+                low=mid+1;
+            }
+            else
+            {
+                
+                high=mid-1;
+            }
+        }
+        return ans;
+        
+    }
+};
