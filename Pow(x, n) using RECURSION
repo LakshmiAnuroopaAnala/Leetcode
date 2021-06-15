@@ -1,0 +1,23 @@
+class Solution {
+public:
+    double myPow(double x, int y) {
+       double pow;
+	if(y==0)
+	{
+		return 1;
+	}
+	pow=myPow(x,y/2);
+	if(y%2==0)
+	{
+	   return pow*pow;	
+	}	
+	else if(y<0)
+	{
+		return (pow*pow)/x;
+	}
+	else
+	{
+		return x*pow*pow;
+	} 
+    }
+};
