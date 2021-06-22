@@ -1,0 +1,26 @@
+class Solution {
+public:
+    int maxArea(vector<int>& container) {
+        int left=0,right=container.size()-1,result=0;
+	while(left<right)
+	{
+		int capacity;
+		if(container[left]<container[right])
+		{
+			capacity=container[left]*(right-left);
+			left++;
+		}
+		else
+		{
+			capacity=container[right]*(right-left);
+			right--;
+		}
+		if(result<capacity)
+		{
+			result=capacity;
+		}
+		
+	}
+	return result;
+    }
+};
