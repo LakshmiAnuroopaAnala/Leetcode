@@ -1,0 +1,26 @@
+class Solution {
+    public String convertToTitle(int columnNumber) {
+        return convertToNumber(columnNumber);
+    }
+    public static String convertToNumber(int columnNumber) {
+        String result=new String();
+        int rem;
+        while(columnNumber!=0){
+            columnNumber-=1;
+            rem=(columnNumber%26)+65;
+            columnNumber/=26;
+            char singleResult=(char)rem;
+            result+=singleResult;
+        }
+        return reverseString(result);
+    }
+    public static String reverseString(String originalString){
+        String reversedString="";
+        char ch;
+        for(int i=0;i<originalString.length();i++){
+            ch=originalString.charAt(i);
+            reversedString=ch+reversedString;
+        }
+        return reversedString;
+    }
+}
