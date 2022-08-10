@@ -1,0 +1,31 @@
+package CodingPractice;
+
+import java.util.Scanner;
+
+// USING MOORE'S VOTING ALGORITHM
+public class MajorityElement {
+    public static void main(String[] args) {
+        Scanner scanner=new Scanner(System.in);
+        int n=scanner.nextInt();
+        int array[]=new int[n];
+        for(int i=0;i<n;i++){
+            array[i]=scanner.nextInt();
+        }
+        System.out.println(majorityElement(array));
+    }
+    public static int majorityElement(int[] nums) {
+        int currentElement=0, count=0;
+        for (int element:nums) {
+            if(count==0){
+                currentElement=element;
+            }
+            if(currentElement==element){
+                count++;
+            }
+            else {
+                count--;
+            }
+        }
+        return currentElement;
+    }
+}
